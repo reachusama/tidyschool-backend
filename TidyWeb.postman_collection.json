@@ -9,126 +9,406 @@
 			"name": "account",
 			"item": [
 				{
-					"name": "Register",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "823b0e41-a37e-4725-badb-1bcc043fbd63",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "username",
-									"value": "usamasdot@gmail.com",
-									"type": "text"
+					"name": "teacher",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"username\": \"teacher\",\n        \"password\": \"teacher\",\n        \"is_student\": false,\n        \"is_teacher\": true,\n        \"is_ai\": false\n    },\n    \"email\": \"teacher@teacher.com\",\n    \"address\": \"teacher\",\n    \"first_name\": \"teacher\",\n    \"last_name\": \"teacher\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
-								{
-									"key": "password",
-									"value": "Usama.aw24",
-									"type": "text"
-								},
-								{
-									"key": "first_name",
-									"value": "Usama",
-									"type": "text"
-								},
-								{
-									"key": "last_name",
-									"value": "Shahid",
-									"type": "text"
-								},
-								{
-									"key": "address",
-									"value": "Lahore",
-									"type": "text"
-								},
-								{
-									"key": "is_student",
-									"value": "True",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "is_teacher",
-									"value": "True",
-									"type": "text"
-								},
-								{
-									"key": "is_ai",
-									"value": "",
-									"type": "text",
-									"disabled": true
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/account/auth/register/teacher",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"account",
+										"auth",
+										"register",
+										"teacher"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/auth/register",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"auth",
-								"register"
-							]
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token 64b38a7efd07fbbd0685f9afef8c9809e8a3d645e49b4d80c68b0ee0b3307866",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"teacher2\",\n    \"password\": \"teacher\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/account/auth/login/teacher",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"account",
+										"auth",
+										"login",
+										"teacher"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token fedb27a9f012610176441310f082cccf49b01707dfed5ab306a319a270410ec5"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "usamasdot@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "Usama.aw24",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/account/auth/user/teacher",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"account",
+										"auth",
+										"user",
+										"teacher"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Token 64b38a7efd07fbbd0685f9afef8c9809e8a3d645e49b4d80c68b0ee0b3307866"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "username",
-									"value": "usamasdot@gmail.com",
-									"type": "text"
+					"name": "student",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"username\": \"student\",\n        \"password\": \"student\",\n        \"is_student\": true,\n        \"is_teacher\": false,\n        \"is_ai\": false\n    },\n    \"email\": \"student@student.com\",\n    \"address\": \"student\",\n    \"first_name\": \"student\",\n    \"last_name\": \"student\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
-								{
-									"key": "password",
-									"value": "Usama.aw24",
-									"type": "text"
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/account/auth/register/student",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"account",
+										"auth",
+										"register",
+										"student"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/auth/login",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"auth",
-								"login"
-							]
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token 64b38a7efd07fbbd0685f9afef8c9809e8a3d645e49b4d80c68b0ee0b3307866",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"student\",\n    \"password\": \"student\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/account/auth/login/student",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"account",
+										"auth",
+										"login",
+										"student"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token 8f1afc570a01c6fd123e37f501b27bc9186691e75b1e35d4b0cec3e8495dd1c9"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "usamasdot@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "Usama.aw24",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/account/auth/user/student",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"account",
+										"auth",
+										"user",
+										"student"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
+				},
+				{
+					"name": "ai",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"username\": \"ai\",\n        \"password\": \"ai\",\n        \"is_student\": false,\n        \"is_teacher\": false,\n        \"is_ai\": true\n    },\n    \"email\": \"ai@ai.com\",\n    \"address\": \"ai\",\n    \"first_name\": \"ai\",\n    \"last_name\": \"ai\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/account/auth/register/ai",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"account",
+										"auth",
+										"register",
+										"ai"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token 64b38a7efd07fbbd0685f9afef8c9809e8a3d645e49b4d80c68b0ee0b3307866",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"ai\",\n    \"password\": \"ai\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/account/auth/login/ai",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"account",
+										"auth",
+										"login",
+										"ai"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Token 9c2c92c7266a96bfa6272ab9b960a57966385df85714f84d9bbdb6726fa6d520"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "usamasdot@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "Usama.aw24",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/account/auth/user/ai",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"account",
+										"auth",
+										"user",
+										"ai"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				},
 				{
 					"name": "Logout",
@@ -138,7 +418,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Token 64b38a7efd07fbbd0685f9afef8c9809e8a3d645e49b4d80c68b0ee0b3307866"
+								"value": "Token a800c158ee9fc63ea1884ad2223f31bd553147aa413693eaaf2c71ad66205d1d"
 							}
 						],
 						"body": {
@@ -159,7 +439,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/auth/logout",
+							"raw": "http://127.0.0.1:8000/api/account/auth/logout",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -170,58 +450,9 @@
 							"port": "8000",
 							"path": [
 								"api",
+								"account",
 								"auth",
 								"logout"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "User",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Token 59f0b4217e9fa7d552060ff96ef41dfd922e3fcffea8ca33dc3f82a128fb6bc6"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "username",
-									"value": "usamasdot@gmail.com",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "password",
-									"value": "Usama.aw24",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/auth/user",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"auth",
-								"user"
 							]
 						}
 					},
