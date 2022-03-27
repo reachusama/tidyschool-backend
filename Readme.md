@@ -1,4 +1,7 @@
 
+# **Deployed URL**
+https://tidyschool-backend.herokuapp.com/
+
 # **Django Structure:**
 
 models -> serializers -> views
