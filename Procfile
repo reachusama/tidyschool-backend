@@ -1,1 +1,1 @@
-web: gunicorn tidyschool.wsgi
+web: gunicorn tidyschool.wsgi:application
