@@ -1,4 +1,3 @@
-
 # **Deployed URL**
 https://tidyschool-backend.herokuapp.com/
 
